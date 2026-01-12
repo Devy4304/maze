@@ -1,0 +1,2 @@
+public class Vec2 {
+}
