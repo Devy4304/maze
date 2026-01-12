@@ -56,9 +56,15 @@ public class Maze {
     public void printMaze() {
         for (int[] row : maze) {
             for (int col : row) {
-                System.out.print((col == 1) ? "██" : (col == 2) ? "▒▒" : "  ");
+                if (col == 1) { // Wall cell
+                    System.out.print("██");
+                } else if (col == 2) { // End cell
+                    System.out.print("▒▒");
+                } else { // Open passage
+                    System.out.print("  ");
+                }
             }
-            System.out.println();
+            System.out.println(); // New line per row
         }
     }
 }
