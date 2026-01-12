@@ -1,0 +1,80 @@
+
+██
+████
+████▓▓
+████▓▓▓▓
+████▓▓▓▓▒▒
+████▓▓▓▓▒▒▒▒
+████▓▓▓▓▒▒▒▒░░
+████▓▓▓▓▒▒▒▒░░░░
+████▓▓▓▓▒▒▒▒░░░░
+████▓▓▓▓▒▒▒▒░░░░
+████▓▓▓▓▒▒▒▒░░░░
+████▓▓▓▓▒▒▒▒░░░░
+████▓▓▓▓▒▒▒▒░░░░
+████▓▓▓▓▒▒▒▒░░
+████▓▓▓▓▒▒▒▒
+████▓▓▓▓▒▒
+████▓▓▓▓
+████▓▓
+████
+██
+
+
+340
+200
+100
+0x0
+
+---
+
+[u,o,y]  [u,i,o,p,a]                            [a,p,d]
+[t,y,r]  [u,i,o,p,a,s,f,d,t,y]                  [d,f,j]
+[w,e,r]  [u,i,o,p,a,s,f,d,t,y,r,e,g]            [j,h,z]
+[q , w]  [u,i,o,p,a,s,f,d,t,y,r,e,g,w,q,k,l,z]  [l , z]
+
+qkkkkkkkkkkkkkkkkkkkkl
+qqkkkkkkkkkkkkkkkkkkll
+wwegggggggggggggggghzz
+wweegggggggggggggghhzz
+wwrrtssssssssssssfjjzz
+wwrrttssssssssssffjjzz
+wwrryyuoooooooopddjjzz
+wwrryyuuooooooppddjjzz
+wwrryyiiooooooaaddjjzz
+wwrryyiiooooooaaddjjzz
+wwrryyiiooooooaaddjjzz
+wwrryyiiooooooaaddjjzz
+wwrryyuuooooooppddjjzz
+wwrryyuoooooooopddjjzz
+wwrrttssssssssssffjjzz
+wwrrtssssssssssssfjjzz
+wweegggggggggggggghhzz
+wwegggggggggggggggghzz
+qqkkkkkkkkkkkkkkkkkkll
+qkkkkkkkkkkkkkkkkkkkkl
+
+
+
+{
+    {'q', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'l'},
+    {'q', 'q', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'l', 'l'},
+    {'w', 'w', 'e', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'h', 'z', 'z'},
+    {'w', 'w', 'e', 'e', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'h', 'h', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 't', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 'f', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 't', 't', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 'f', 'f', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 'y', 'y', 'u', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'p', 'd', 'd', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 'y', 'y', 'u', 'u', 'o', 'o', 'o', 'o', 'o', 'o', 'p', 'p', 'd', 'd', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 'y', 'y', 'i', 'i', 'o', 'o', 'o', 'o', 'o', 'o', 'a', 'a', 'd', 'd', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 'y', 'y', 'i', 'i', 'o', 'o', 'o', 'o', 'o', 'o', 'a', 'a', 'd', 'd', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 'y', 'y', 'i', 'i', 'o', 'o', 'o', 'o', 'o', 'o', 'a', 'a', 'd', 'd', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 'y', 'y', 'i', 'i', 'o', 'o', 'o', 'o', 'o', 'o', 'a', 'a', 'd', 'd', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 'y', 'y', 'u', 'u', 'o', 'o', 'o', 'o', 'o', 'o', 'p', 'p', 'd', 'd', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 'y', 'y', 'u', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'p', 'd', 'd', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 't', 't', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 'f', 'f', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'r', 'r', 't', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 'f', 'j', 'j', 'z', 'z'},
+    {'w', 'w', 'e', 'e', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'h', 'h', 'z', 'z'},
+    {'w', 'w', 'e', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'h', 'z', 'z'},
+    {'q', 'q', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'l', 'l'},
+    {'q', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'l'}
+};
