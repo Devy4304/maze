@@ -7,8 +7,8 @@ public class Renderer {
     public static boolean supportsANSI = true;
 
     public static int[][] test = {
-            {1, 0, 1},
-            {0, 0, 0},
+            {1, 1, 1},
+            {0, 0, 1},
             {1, 0, 1},
             {1, 0, 1},
     };
@@ -39,18 +39,12 @@ public class Renderer {
             for (int col = 0; col < area[row].length; col++) {
                 int cell = area[row][col];
                 if (cell != 0) {
+                    // Create a DrawInfo object
                     DrawInfo info = new DrawInfo();
 
-                    if (cell == 2) {
-                        info.charIndex = row;      // use "█" for exit
-                        info.priority  = row;
-                        info.isExit = true;
-                    } else {
-                        // Wall: brightness & priority based on distance (row)
-                        info.charIndex = row;    // 0..3 -> "░▒▓█"
-                        info.priority  = row;    // back (0) .. front (3)
-                        info.isExit = false;
-                    }
+                    info.charIndex = row;      // 0..3 -> "░▒▓█"
+                    info.priority  = row;      // back (0) .. front (3)
+                    info.isExit = (cell == 2); // If the cell is an exit, set it to be so
 
                     for (char key : RendererData.LOOKUP[row][col]) {
                         // Front (higher priority) overwrites back for the same key
@@ -61,7 +55,7 @@ public class Renderer {
             }
         }
 
-        // Fill buffer from PATTERN + draw map
+        // Fill buffer from PATTERN + draw the map
         for (int row = 0; row < RendererData.ROWS; row++) {
             for (int col = 0; col < RendererData.COLUMNS; col++) {
                 buffer[row][col] = "";
@@ -82,6 +76,7 @@ public class Renderer {
                         buffer[row][col] += RendererData.Colors.RESET;
                     }
                 } else {
+                    // Print empty whitespace if nothing is there
                     buffer[row][col] += " ".repeat(2);
                 }
             }
