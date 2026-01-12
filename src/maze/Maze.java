@@ -13,10 +13,10 @@ public class Maze {
             throw new IllegalArgumentException("size must be >= 1");
         }
         this.size = size;
-        maze = new int[size * 2 + 1][size * 2 + 1]; // Create grid with walls
+        maze = new int[size * 2 + 1][size * 2 + 1]; // Create a grid with walls
 
         for (int[] row : maze) {
-            Arrays.fill(row, 1); // Fill grid with walls
+            Arrays.fill(row, 1); // Fill the grid with walls
         }
 
         generateMaze(); // Build the maze layout
