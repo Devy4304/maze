@@ -32,6 +32,12 @@
 [t,y,r]  [u,i,o,p,a,s,f,d,t,y]                  [d,f,j]
 [w,e,r]  [u,i,o,p,a,s,f,d,t,y,r,e,g]            [j,h,z]
 [q , w]  [u,i,o,p,a,s,f,d,t,y,r,e,g,w,q,k,l,z]  [l , z]
+{
+    {{'u', 'i', 'y'}, {'u', 'i', 'o', 'p', 'a'},                                                                  {'a', 'p', 'd'}},
+    {{'t', 'y', 'r'}, {'u', 'i', 'o', 'p', 'a', 's', 'f', 'd', 't', 'y'},                                         {'d', 'f', 'j'}},
+    {{'w', 'e', 'r'}, {'u', 'i', 'o', 'p', 'a', 's', 'f', 'd', 't', 'y', 'r', 'e', 'g'},                          {'j', 'h', 'z'}},
+    {{'q', 'w'},      {'u', 'i', 'o', 'p', 'a', 's', 'f', 'd', 't', 'y', 'r', 'e', 'g', 'w', 'q', 'k', 'l', 'z'}, {'l', 'z'}     },
+}
 
 qkkkkkkkkkkkkkkkkkkkkl
 qqkkkkkkkkkkkkkkkkkkll
