@@ -116,9 +116,9 @@ public class Maze {
 
                 if (cell.row >= 0 && cell.row < maze.length
                         && cell.column >= 0 && cell.column < maze[0].length) {
-                    viewport[3 - row][col + 1] = maze[cell.row][cell.column];
+                    viewport[3 - row][2 - (col + 1)] = maze[cell.row][cell.column];
                 } else {
-                    viewport[3 - row][col + 1] = 0;
+                    viewport[3 - row][2 - (col + 1)] = 0;
                 }
             }
         }

@@ -20,7 +20,7 @@ public class Main {
         System.out.print(" > ");
         String input = scanner.nextLine();
 
-        String[] forward = {"forward", "w", "mv", "f"};
+        String[] forward = {"forward", "w", "mv", "f", ""};
         String[] right = {"right", "d", "r", "e"};
         String[] left = {"left", "a", "l", "q"};
         String[] turnaround = {"turn", "tr", "s", "turnaround"};

@@ -9,8 +9,8 @@ public class Vec2 {
     public static final Vec2[] DIRECTIONS = {NORTH, EAST, SOUTH, WEST};
 
     public enum Rotation {
-        LEFT(1),
-        RIGHT(-1),
+        LEFT(-1),
+        RIGHT(1),
         TURNAROUND(2);
 
         private final int delta;
