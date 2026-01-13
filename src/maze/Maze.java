@@ -85,13 +85,7 @@ public class Maze {
         for (int row = 0; row < maze.length; row++) { // Loop through each row
             for (int col = 0; col < maze[row].length; col++) { // Loop through each cell
                 if (row == playerPos.row && col == playerPos.column) {
-                    System.out.print("**");
-                } else if (row == playerPos.add(Vec2.DIRECTIONS[playerDirection]).row && col == playerPos.add(Vec2.DIRECTIONS[playerDirection]).column) {
-                    if (maze[row][col] == 1) {
-                        System.out.print("##");
-                    } else {
-                        System.out.print("^^");
-                    }
+                    System.out.print(String.valueOf(Vec2.DIRECTIONCHARS.charAt(playerDirection)).repeat(2));
                 } else if (maze[row][col] == 1) { // Wall cell
                     System.out.print("██");
                 } else if (maze[row][col] == 2) { // End cell

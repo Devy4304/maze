@@ -8,6 +8,8 @@ public class Vec2 {
     
     public static final Vec2[] DIRECTIONS = {NORTH, EAST, SOUTH, WEST};
 
+    public static final String DIRECTIONCHARS = "↑→↓←";
+
     public enum Rotation {
         LEFT(-1),
         RIGHT(1),
