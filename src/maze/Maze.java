@@ -30,11 +30,13 @@ public class Maze {
     }
 
     private void generateMaze() {
+        // Generate the maze by carving passages, then mark the goal cell.
         carvePath(new Vec2(1, 1)); // Start carving at (1,1)
         maze[size * 2 - 1][size * 2 - 1] = 2; // Mark maze end as 2
     }
 
     private void carvePath(Vec2 c) {
+        // Depth-first maze generation: carve current cell, then recurse into shuffled neighbors.
         maze[c.row][c.column] = 0; // Open the current cell
 
         ArrayList<Vec2> neighbors = new ArrayList<>(); // Stores candidate neighbors
@@ -60,6 +62,7 @@ public class Maze {
     }
 
     public void movePlayerForward() {
+        // Move one step forward if passable, otherwise win if stepping onto the goal.
         Vec2 dir = Vec2.DIRECTIONS[Math.floorMod(playerDirection, 4)];
         Vec2 newPlayerPos = playerPos.add(dir);
         if (maze[newPlayerPos.row][newPlayerPos.column] == 0) {
@@ -78,10 +81,12 @@ public class Maze {
     }
 
     public void rotatePlayer(Vec2.Rotation rotator) {
+        // Keep direction in [0..3] even after multiple rotations.
         playerDirection = Math.floorMod(playerDirection + rotator.delta() + 16, 4);
     }
 
     public void printMaze() {
+        // Debug render of the full maze grid, including player and exit.
         for (int row = 0; row < maze.length; row++) { // Loop through each row
             for (int col = 0; col < maze[row].length; col++) { // Loop through each cell
                 if (row == playerPos.row && col == playerPos.column) {
@@ -113,17 +118,11 @@ public class Maze {
                         && cell.column >= 0 && cell.column < maze[0].length) {
                     viewport[3 - row][2 - (col + 1)] = maze[cell.row][cell.column];
                 } else {
+                    // Treat out-of-bounds as empty so the viewport fill stays safe.
                     viewport[3 - row][2 - (col + 1)] = 0;
                 }
             }
         }
-
-        // for (int row[] : viewport) {
-        //     for (int col : row) {
-        //         System.out.print(col);
-        //     }
-        //     System.out.println();
-        // }
 
         Renderer.render(viewport);
     }

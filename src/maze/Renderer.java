@@ -3,8 +3,6 @@ package maze;
 import java.util.HashMap;
 
 public class Renderer {
-    public static boolean supportsANSI = true;
-
     // Info about what to draw for a given pattern key
     private static class DrawInfo {
         int charIndex; // index into RendererData.CHARS ("░▒▓█")
@@ -57,14 +55,14 @@ public class Renderer {
                     DrawInfo info = draw.get(patternKey);
 
                     // Color exits red (optional, uses the high priority)
-                    if (supportsANSI && info.isExit) {
+                    if (Main.ANSI && info.isExit) {
                         buffer[row][col] += RendererData.Colors.RED;
                     }
 
                     char ch = RendererData.CHARS.charAt(info.charIndex);
                     buffer[row][col] += String.valueOf(ch).repeat(3);
 
-                    if (supportsANSI && info.isExit) {
+                    if (Main.ANSI && info.isExit) {
                         buffer[row][col] += RendererData.Colors.RESET;
                     }
                 } else {
