@@ -49,7 +49,7 @@ public class Renderer {
 
                     // Color exits red (optional, uses the high priority)
                     if (Main.ANSI && info.isExit) {
-                        buffer[row][col] += RendererData.Colors.RED;
+                        buffer[row][col] += RendererData.Colors.GREEN;
                     }
 
                     char ch = RendererData.CHARS.charAt(info.charIndex);
@@ -60,11 +60,11 @@ public class Renderer {
                     }
                 } else {
                     if (row <= 10) {
-                        if (Main.ANSI && RendererData.STARS[playerDirection][row][col] == '⁜') {
+                        if (Main.ANSI && RendererData.STARS[playerDirection][row][col] == 'x') {
                             buffer[row][col] += RendererData.Colors.BLUE;
                         }
                         buffer[row][col] += " " + RendererData.STARS[playerDirection][row][col] + " ";
-                        if (Main.ANSI && RendererData.STARS[playerDirection][row][col] == '⁜') {
+                        if (Main.ANSI && RendererData.STARS[playerDirection][row][col] == 'x') {
                             buffer[row][col] += RendererData.Colors.RESET;
                         }
                     } else buffer[row][col] += " ".repeat(3);
