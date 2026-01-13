@@ -73,6 +73,10 @@ public class Maze {
         return win;
     }
 
+    public void win() {
+        win = true;
+    }
+
     public void rotatePlayer(Vec2.Rotation rotator) {
         playerDirection = Math.floorMod(playerDirection + rotator.delta() + 16, 4);
     }

@@ -5,13 +5,6 @@ import java.util.HashMap;
 public class Renderer {
     public static boolean supportsANSI = true;
 
-    public static int[][] test = {
-            {1, 1, 1},
-            {1, 0, 1},
-            {1, 0, 1},
-            {1, 0, 1},
-    };
-
     // Info about what to draw for a given pattern key
     private static class DrawInfo {
         int charIndex; // index into RendererData.CHARS ("░▒▓█")
@@ -36,12 +29,6 @@ public class Renderer {
         // Build draw map
         for (int row = 0; row < area.length; row++) {
             for (int col = 0; col < area[row].length; col++) {
-                int c = switch (col) {
-                    case 0 -> 0;
-                    case 1 -> 2;
-                    case 2 -> 1;
-                    default -> throw new IllegalStateException("Unexpected value: " + col);
-                };
                 int cell = area[row][col];
                 if (cell != 0) {
                     // Create a DrawInfo object
@@ -94,5 +81,6 @@ public class Renderer {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }
