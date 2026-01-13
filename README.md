@@ -1,7 +1,7 @@
 ## Maze
 Enter the maze of eternal suffering, now in 3D*!!
 
-Choose from 3 difficulties if you feel scared.
+You have the choice of 4 difficulties so you can have fun no matter what!
 ```
 ██                                        ██  |  PREVIEW GAMEPLAY
 ████                                    ████  |  
