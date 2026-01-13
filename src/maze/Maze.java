@@ -96,6 +96,7 @@ public class Maze {
             }
             System.out.println(); // New line per row
         }
+        System.out.println();
     }
 
     public void renderViewport() {
