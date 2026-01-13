@@ -58,12 +58,14 @@ public class Main {
             // Toggle ANSI rendering for terminals that don't support escape codes.
             ANSI = !ANSI;
             System.out.println("ANSI is now " + ((ANSI) ? "enabled" : "disabled") + ".");
+            getPlayerInput(maze);
         } else if (input.equalsIgnoreCase("i hate this level, let me out!")) {
             // Cheat-only instant win.
             if (cheats) {
                 maze.win();
             } else {
                 System.out.println("Cheats must be enabled to use this command. Type 'cheats' to enable cheats.");
+                getPlayerInput(maze);
             }
         } else if (input.equalsIgnoreCase("showgamemap")) {
             // Cheat-only full map reveal.
@@ -72,15 +74,18 @@ public class Main {
             } else {
                 System.out.println("Cheats must be enabled to use this command. Type 'cheats' to enable cheats.");
             }
+            getPlayerInput(maze);
         } else if (input.equalsIgnoreCase("cheats")) {
             // Toggle cheat mode (enables debug/skip commands).
             cheats = !cheats;
             System.out.println("Cheats are now " + ((cheats) ? "enabled" : "disabled") + "!");
+            getPlayerInput(maze);
         } else if (textFoundInList(quit, input)) {
             System.out.println("Thank you for playing!");
             System.exit(0);
         } else {
             System.out.println("Command not found. Type 'help' for list of commands.");
+            getPlayerInput(maze);
         }
     }
 
