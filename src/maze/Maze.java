@@ -24,7 +24,7 @@ public class Maze {
 
         generateMaze(); // Build the maze layout
 
-        playerPos = new Vec2(1,1);
+        playerPos = new Vec2(1, 1);
         playerDirection = 2;
         win = false;
     }
@@ -44,8 +44,8 @@ public class Maze {
         for (Vec2 dir : Vec2.DIRECTIONS) { // Check four directions
             Vec2 cc = c.add(dir.multiply(2)); // Jump two cells ahead
             if (0 <= cc.row && cc.row < size * 2 + 1 &&    // Check row bounds
-                0 <= cc.column && cc.column < size * 2 + 1 && // Check column bounds
-                maze[cc.row][cc.column] == 1) { // Only visit walls
+                    0 <= cc.column && cc.column < size * 2 + 1 && // Check column bounds
+                    maze[cc.row][cc.column] == 1) { // Only visit walls
                 neighbors.add(cc); // Add valid neighbor
             }
         }
@@ -55,7 +55,7 @@ public class Maze {
         for (Vec2 pos : neighbors) { // Visit each neighbor
             if (maze[pos.row][pos.column] == 1) { // Skip if already carved
                 maze[c.row + (pos.row - c.row) / 2]              // Row between cells
-                    [c.column + (pos.column - c.column) / 2] = 0; // Open wall between
+                        [c.column + (pos.column - c.column) / 2] = 0; // Open wall between
                 carvePath(pos); // Recurse into a neighbor
             }
         }
@@ -111,8 +111,8 @@ public class Maze {
                 int dir = Math.floorMod(playerDirection, 4);
 
                 Vec2 forward = Vec2.DIRECTIONS[dir].multiply(row);
-                Vec2 right   = Vec2.DIRECTIONS[(dir + 1) % 4].multiply(col);
-                Vec2 cell    = playerPos.add(forward).subtract(right);
+                Vec2 right = Vec2.DIRECTIONS[(dir + 1) % 4].multiply(col);
+                Vec2 cell = playerPos.add(forward).subtract(right);
 
                 if (cell.row >= 0 && cell.row < maze.length
                         && cell.column >= 0 && cell.column < maze[0].length) {

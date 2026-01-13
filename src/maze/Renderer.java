@@ -3,13 +3,6 @@ package maze;
 import java.util.HashMap;
 
 public class Renderer {
-    // Info about what to draw for a given pattern key
-    private static class DrawInfo {
-        int charIndex; // index into RendererData.CHARS ("░▒▓█")
-        int priority;  // higher = closer / more in front
-        boolean isExit;
-    }
-
     public static void render(int[][] area, int playerDirection) {
         // Make sure the area is valid
         if (area.length != 4 || area[0].length != 3) {
@@ -33,7 +26,7 @@ public class Renderer {
                     DrawInfo info = new DrawInfo();
 
                     info.charIndex = row;      // 0..3 -> "░▒▓█"
-                    info.priority  = row;      // back (0) .. front (3)
+                    info.priority = row;      // back (0) .. front (3)
                     info.isExit = (cell == 2); // If the cell is an exit, set it to be so
 
                     for (char key : RendererData.LOOKUP[row][col]) {
@@ -87,5 +80,12 @@ public class Renderer {
             System.out.println();
         }
         System.out.println();
+    }
+
+    // Info about what to draw for a given pattern key
+    private static class DrawInfo {
+        int charIndex; // index into RendererData.CHARS ("░▒▓█")
+        int priority;  // higher = closer / more in front
+        boolean isExit;
     }
 }
