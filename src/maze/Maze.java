@@ -7,6 +7,9 @@ import java.util.Collections; // Utility for shuffling lists
 public class Maze {
     private final int[][] maze; // Grid storing maze cells
     private final int size;     // Logical maze size (without walls)
+    private Vec2 playerPos;
+    private int playerDirection;
+    private boolean win;
 
     public Maze(int size) {
         if (size < 1) { // Ensure maze size is valid
@@ -20,6 +23,10 @@ public class Maze {
         }
 
         generateMaze(); // Build the maze layout
+
+        playerPos = new Vec2(1,1);
+        playerDirection = 2;
+        win = false;
     }
 
     private void generateMaze() {
@@ -33,7 +40,7 @@ public class Maze {
         ArrayList<Vec2> neighbors = new ArrayList<>(); // Stores candidate neighbors
 
         for (Vec2 dir : Vec2.DIRECTIONS) { // Check four directions
-            Vec2 cc = c.add(dir.multiply(new Vec2(2, 2))); // Jump two cells ahead
+            Vec2 cc = c.add(dir.multiply(2)); // Jump two cells ahead
             if (0 <= cc.row && cc.row < size * 2 + 1 &&    // Check row bounds
                 0 <= cc.column && cc.column < size * 2 + 1 && // Check column bounds
                 maze[cc.row][cc.column] == 1) { // Only visit walls
@@ -52,12 +59,38 @@ public class Maze {
         }
     }
 
+    public void movePlayerForward() {
+        Vec2 dir = Vec2.DIRECTIONS[Math.floorMod(playerDirection, 4)];
+        Vec2 newPlayerPos = playerPos.add(dir);
+        if (maze[newPlayerPos.row][newPlayerPos.column] == 0) {
+            playerPos = newPlayerPos;
+        } else if (maze[newPlayerPos.row][newPlayerPos.column] == 2) {
+            win = true;
+        }
+    }
+
+    public boolean hasWon() {
+        return win;
+    }
+
+    public void rotatePlayer(Vec2.Rotation rotator) {
+        playerDirection = Math.floorMod(playerDirection + rotator.delta() + 16, 4);
+    }
+
     public void printMaze() {
-        for (int[] row : maze) { // Loop through each row
-            for (int col : row) { // Loop through each cell
-                if (col == 1) { // Wall cell
+        for (int row = 0; row < maze.length; row++) { // Loop through each row
+            for (int col = 0; col < maze[row].length; col++) { // Loop through each cell
+                if (row == playerPos.row && col == playerPos.column) {
+                    System.out.print("**");
+                } else if (row == playerPos.add(Vec2.DIRECTIONS[playerDirection]).row && col == playerPos.add(Vec2.DIRECTIONS[playerDirection]).column) {
+                    if (maze[row][col] == 1) {
+                        System.out.print("##");
+                    } else {
+                        System.out.print("^^");
+                    }
+                } else if (maze[row][col] == 1) { // Wall cell
                     System.out.print("██");
-                } else if (col == 2) { // End cell
+                } else if (maze[row][col] == 2) { // End cell
                     System.out.print("▒▒");
                 } else { // Open passage
                     System.out.print("  ");
@@ -65,5 +98,34 @@ public class Maze {
             }
             System.out.println(); // New line per row
         }
+    }
+
+    public void renderViewport() {
+        int[][] viewport = new int[4][3];
+        for (int row = 0; row <= 3; row++) {
+            for (int col = -1; col <= 1; col++) {
+                int dir = Math.floorMod(playerDirection, 4);
+
+                Vec2 forward = Vec2.DIRECTIONS[dir].multiply(row);
+                Vec2 right   = Vec2.DIRECTIONS[(dir + 1) % 4].multiply(col);
+                Vec2 cell    = playerPos.add(forward).subtract(right);
+
+                if (cell.row >= 0 && cell.row < maze.length
+                        && cell.column >= 0 && cell.column < maze[0].length) {
+                    viewport[3 - row][col + 1] = maze[cell.row][cell.column];
+                } else {
+                    viewport[3 - row][col + 1] = 0;
+                }
+            }
+        }
+
+        // for (int row[] : viewport) {
+        //     for (int col : row) {
+        //         System.out.print(col);
+        //     }
+        //     System.out.println();
+        // }
+
+        Renderer.render(viewport);
     }
 }

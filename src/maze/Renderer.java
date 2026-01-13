@@ -7,7 +7,7 @@ public class Renderer {
 
     public static int[][] test = {
             {1, 1, 1},
-            {2, 0, 1},
+            {1, 0, 1},
             {1, 0, 1},
             {1, 0, 1},
     };
@@ -75,14 +75,14 @@ public class Renderer {
                     }
 
                     char ch = RendererData.CHARS.charAt(info.charIndex);
-                    buffer[row][col] += String.valueOf(ch).repeat(2);
+                    buffer[row][col] += String.valueOf(ch).repeat(3);
 
                     if (supportsANSI && info.isExit) {
                         buffer[row][col] += RendererData.Colors.RESET;
                     }
                 } else {
                     // Print empty whitespace if nothing is there
-                    buffer[row][col] += " ".repeat(2);
+                    buffer[row][col] += " ".repeat(3);
                 }
             }
         }
