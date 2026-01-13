@@ -23,9 +23,9 @@ public class Main {
         String input = scanner.nextLine();
 
         // Command aliases (supports short keys and alternate phrases).
-        String[] forward = {"forward", "w", "mv", "f", ""};
-        String[] right = {"right", "d", "r", "e"};
-        String[] left = {"left", "a", "l", "q"};
+        String[] forward = {"forward", "w", "mv", "f", "", "2"};
+        String[] right = {"right", "d", "r", "e", "3"};
+        String[] left = {"left", "a", "l", "q", "1"};
         String[] turnaround = {"turn", "tr", "s", "turnaround"};
         String[] ansi = {"ansi", "color", "disable ansi", "my screen is broken", "what the #### are these random characters!"};
         String[] help = {"help", "h"};
@@ -38,9 +38,9 @@ public class Main {
             System.out.println();
             System.out.println("Function     | Main    | Alts");
             System.out.println("=============|=========|===========");
-            System.out.println("Move Forward | forward | w, mv, f");
-            System.out.println("Turn Right   | right   | d, r, e");
-            System.out.println("Turn Left    | left    | a, l, q");
+            System.out.println("Move Forward | forward | w, (enter)");
+            System.out.println("Turn Right   | right   | d, e");
+            System.out.println("Turn Left    | left    | a, q");
             System.out.println("Turn Around  | turn    | tr, s");
             System.out.println("Toggle ANSI  | ansi    | color");
             System.out.println("Exit Game    | exit    | quit");
