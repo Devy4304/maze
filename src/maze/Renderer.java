@@ -10,7 +10,7 @@ public class Renderer {
         boolean isExit;
     }
 
-    public static void render(int[][] area) {
+    public static void render(int[][] area, int playerDirection) {
         // Make sure the area is valid
         if (area.length != 4 || area[0].length != 3) {
             throw new IllegalArgumentException(
@@ -66,8 +66,15 @@ public class Renderer {
                         buffer[row][col] += RendererData.Colors.RESET;
                     }
                 } else {
-                    // Print empty whitespace if nothing is there
-                    buffer[row][col] += " ".repeat(3);
+                    if (row <= 10) {
+                        if (Main.ANSI && RendererData.STARS[playerDirection][row][col] == '⁜') {
+                            buffer[row][col] += RendererData.Colors.BLUE;
+                        }
+                        buffer[row][col] += " " + RendererData.STARS[playerDirection][row][col] + " ";
+                        if (Main.ANSI && RendererData.STARS[playerDirection][row][col] == '⁜') {
+                            buffer[row][col] += RendererData.Colors.RESET;
+                        }
+                    } else buffer[row][col] += " ".repeat(3);
                 }
             }
         }

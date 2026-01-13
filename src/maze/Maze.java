@@ -124,6 +124,6 @@ public class Maze {
             }
         }
 
-        Renderer.render(viewport);
+        Renderer.render(viewport, playerDirection);
     }
 }
