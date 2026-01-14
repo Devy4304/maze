@@ -46,6 +46,7 @@ public class Main {
             System.out.println("Exit Game    | exit    | quit");
             System.out.println("Open Help    | help    | h");
             System.out.println();
+            getPlayerInput(maze);
         } else if (textFoundInList(forward, input)) {
             maze.movePlayerForward();
         } else if (textFoundInList(right, input)) {

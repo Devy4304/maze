@@ -20,7 +20,13 @@ public class Renderer {
         // Build draw map
         for (int row = 0; row < area.length; row++) {
             for (int col = 0; col < area[row].length; col++) {
-                int cell = area[row][col];
+                int c = switch (col) {
+                    case 0 -> 0;
+                    case 1 -> 2;
+                    case 2 -> 1;
+                    default -> col;
+                };
+                int cell = area[row][c];
                 if (cell != 0) {
                     // Create a DrawInfo object
                     DrawInfo info = new DrawInfo();
@@ -29,7 +35,7 @@ public class Renderer {
                     info.priority = row;      // back (0) .. front (3)
                     info.isExit = (cell == 2); // If the cell is an exit, set it to be so
 
-                    for (char key : RendererData.LOOKUP[row][col]) {
+                    for (char key : RendererData.LOOKUP[row][c]) {
                         // Front (higher priority) overwrites back for the same key
                         draw.merge(key, info, (oldV, newV) ->
                                 (newV.priority >= oldV.priority) ? newV : oldV);
