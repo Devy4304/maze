@@ -135,7 +135,7 @@ public class Main {
         }
         if (ANSI) System.out.print(RendererData.Colors.RED); // set color to RED
         System.out.println(" __ __   ___   __ __        ___  _____   __   ____  ____   ___  ___    __ \n|  |  | /   \\ |  |  |      /  _]/ ___/  /  ] /    ||    \\ /  _]|   \\  |  |\n|  |  ||     ||  |  |     /  [_(   \\_  /  / |  o  ||  o  )  [_ |    \\ |  |\n|  ~  ||  O  ||  |  |    |    _]\\__  |/  /  |     ||   _/    _]|  D  ||__|\n|___, ||     ||  :  |    |   [_ /  \\ /   \\_ |  _  ||  | |   [_ |     | __ \n|     ||     ||     |    |     |\\    \\     ||  |  ||  | |     ||     ||  |\n|____/  \\___/  \\__,_|    |_____| \\___|\\____||__|__||__| |_____||_____||__|");
-        System.out.println(RendererData.Colors.RESET); // reset ANSI color
+        if (ANSI) System.out.println(RendererData.Colors.RESET); // reset ANSI color
         System.out.print("Would you like to play again (y/n)?");
     }
 
